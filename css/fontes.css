@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'RedHatDisplay-Light';
+    src: url(../oficina-front/fonts/RedHatDisplay-Light.ttf);
+}
+font-face {
+    font-family: 'RedHatDisplay-Bold';
+    src: url(../oficina-front/fonts/RedHatDisplay-Bold.ttf);
+}
+body {
+    font-family: 'RedHatDisplay-Light';
+}
+
+h1,h2,h3,h4 {
+   font-family: 'RedHatDisplay-Bold';
+   line-height: 1;
+}
