@@ -41,3 +41,38 @@ function slideShow(){
     setTimeout('slideShow()',tempo);
 }
 slideShow();
+
+
+//evento que carrega a pagina antes de ser analisada pelo css
+document.addEventListener('DOMContentLoaded',()=>{
+    const gridItems = document.querySelectorAll('.energy-grid-item');
+    const modalContainer = document.getElementById('modal-container');
+    const modalImage = document.getElementById('modal-image');
+    const modalText = document.getElementById('modal-text');
+    const closeButton = document.querySelector('.close-btn');
+
+    gridItems.forEach(item=>{ 
+        const link =item.querySelector('a');
+        link?.addEventListener('click',(e)=>{
+            e.preventDefault(); //impedir que o link navegue antes de executar
+            const img =item.querySelector('img');
+            const text =item.querySelector('p');
+            if(img && text){
+            modalImage.src=img.src;
+            modalImage.alt=img.alt;
+            modalText.textContent = text.textContent;
+            modalContainer.style.display='flex'; //mostra o modal na tela
+            }
+        });
+    });
+    const closeModal =() =>{
+        modalContainer.style.display='none' //esconde o modaL
+    };
+    //fechar ao clicar no botao
+    closeButton.addEventListener('click', closeModal);
+    window.addEventListener('click',(e)=>{
+        if(e.target === modalContainer){
+            closeModal();
+        }
+    });
+});
