@@ -17,3 +17,27 @@ headerMenu.addEventListener('click', (e)=>{
 })
 //criar evento que ao clicar executa a função togglemenu
 
+let imagens=[
+    'oficina-front/images/index/banner.jpg',
+    'oficina-front/images/index/energia1.jpg',
+    'oficina-front/images/index/energia2.jpg',
+    'oficina-front/images/index/energia3.jpg',
+];
+//DECLARANDO AS VARIAVEIS
+let i=0;
+let tempo =3000;
+const hero = document.querySelector('.hero');
+ 
+//CRIANDO A FUNÇÃO DO SLIDESHOW
+ 
+function slideShow(){
+    if(hero){
+        hero.style.backgroundImage=`var(--gradient), url('${imagens[i]}')`
+    }
+    i++;
+    if(i == imagens.length){
+        i = 0;
+    }
+    setTimeout('slideShow()',tempo);
+}
+slideShow();
