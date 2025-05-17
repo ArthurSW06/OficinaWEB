@@ -192,11 +192,11 @@ span{
     .header-menu{
         width: 100%;
         height:  100dvh;
-        background: var(--color-grenn-800);
+        background: var(--gradient);
         position: absolute;
         z-index: 1;
         top: 0;
-        left: -100%;
+        right: -100%;
         gap:0;
         text-align: center;
         flex-direction: column;
@@ -207,16 +207,20 @@ span{
     .active{
         left: 0;
     }
-    .sanduiche.active.barra:first-child{
+    .sanduiche.active .barra:first-child{
         transform: translateY(8px) rotate(360deg) rotate(45deg);
 
     }
 
-    .sanduiche.active.barra:nth-child(2){
+    .sanduiche.active .barra:nth-child(2){
         opacity: 0;
 
     }
-    .sanduiche.active.barra:last-child{
-        transform: translateY(-8px) rotate(360deg) rotate(45deg);
+    .sanduiche.active .barra:last-child{
+        transform: translateY(-8px) rotate(-360deg) rotate(-45deg);
+    }
+    .header-menu{
+        gap:6rem;
+        font-size: 3rem;
     }
 }
